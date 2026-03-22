@@ -4,11 +4,11 @@ const os = require('os')
 const app = express()
 const PORT = 3000
 
-const networkInterfaces = os.networkInterfaces();
-console.log(networkInterfaces)
-
+const hostname = os.hostname()
 app.get("/", (req, res) =>{
-    res.json(networkInterfaces)
+    res.json({
+        hostname
+    })
 })
 
 app.listen(PORT, () =>{
